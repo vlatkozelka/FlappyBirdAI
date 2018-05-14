@@ -100,6 +100,9 @@ fun main(args: Array<String>) {
         var lastObstacleSpawnTime = System.currentTimeMillis()
         var currentTime: Long
         var firstUpdate = true
+        var lastUpdateTime: Long
+
+
         while (true) {
             //cleanup
             for (i in objectsPendingRemoval.size - 1 downTo 0) {
@@ -157,8 +160,16 @@ fun main(args: Array<String>) {
                 }
             }
             panel.repaint()
+
             //TODO separate UI update from physics update
-            Thread.sleep(1000L / Constants.FPS)
+            //sleep until it's time for a new update
+            lastUpdateTime = System.currentTimeMillis()
+            currentTime = System.currentTimeMillis()
+
+            while (currentTime - lastUpdateTime < 1000L / Constants.FPS){
+                Thread.sleep(1)
+                currentTime = System.currentTimeMillis()
+            }
         }
     }.start()
 
