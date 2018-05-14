@@ -1,0 +1,48 @@
+buildscript {
+    ext {
+        dl4j_version = "1.0.0-alpha"
+        kotlin_version = '1.2.31'
+    }
+
+
+    repositories {
+        maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+group 'AI'
+version '1.0-SNAPSHOT'
+
+apply plugin: "kotlin"
+apply plugin: "java-library"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.bytedeco', name: 'javacpp', version: '1.4.1'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    compile "org.deeplearning4j:deeplearning4j-core:${dl4j_version}"
+    //compile "org.nd4j:nd4j-native-platform:${dl4j_version}"
+    compile "org.nd4j:nd4j-cuda-9.1-platform:${dl4j_version}"
+    compile "org.slf4j:slf4j-simple:1.7.25"
+    compile "org.slf4j:slf4j-api:1.7.25"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "1.8"
+}
