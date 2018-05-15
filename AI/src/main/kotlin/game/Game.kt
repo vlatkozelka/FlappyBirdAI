@@ -15,6 +15,8 @@ import org.deeplearning4j.rl4j.mdp.MDP
 import org.deeplearning4j.rl4j.network.ac.ActorCriticFactoryCompGraphStdConv
 import org.deeplearning4j.rl4j.space.*
 import org.deeplearning4j.rl4j.util.DataManager
+import org.nd4j.shade.jackson.databind.ObjectMapper
+import java.awt.Color
 import java.awt.Dimension
 import java.awt.event.WindowEvent
 import java.awt.event.WindowEvent.WINDOW_CLOSING
@@ -71,7 +73,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         panel.isFocusable = true
 
 
-        panel.size = Dimension(1000, 500)
+        panel.size = Dimension(screenWidth, screenHeight)
         frame.contentPane = panel
 
         panel.isVisible = true
@@ -84,6 +86,8 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         gameObservationSpace = ArrayObservationSpace<GamePanel>(shape)
 
         screenBuffer = ByteArray(shape[0] * shape[1] * shape[2])
+
+        resetGame()
 
 
     }
