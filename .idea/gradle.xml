@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/AI" />
           </set>
         </option>
         <option name="useAutoImport" value="true" />
@@ -15,16 +16,6 @@
       <GradleProjectSettings>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$/AI" />
-        <option name="useAutoImport" value="true" />
-      </GradleProjectSettings>
-      <GradleProjectSettings>
-        <option name="distributionType" value="DEFAULT_WRAPPED" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/Game" />
-        <option name="modules">
-          <set>
-            <option value="$PROJECT_DIR$/Game" />
-          </set>
-        </option>
         <option name="useAutoImport" value="true" />
       </GradleProjectSettings>
     </option>

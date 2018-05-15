@@ -36,8 +36,21 @@ dependencies {
     compile "org.deeplearning4j:deeplearning4j-core:${dl4j_version}"
     //compile "org.nd4j:nd4j-native-platform:${dl4j_version}"
     compile "org.nd4j:nd4j-cuda-9.1-platform:${dl4j_version}"
+    compile "org.nd4j:nd4j-cuda-9.1:${dl4j_version}"
     compile "org.slf4j:slf4j-simple:1.7.25"
     compile "org.slf4j:slf4j-api:1.7.25"
+    compile group: 'org.json', name: 'json', version: '20180130'
+    compile files('libs/*.jar')
+}
+
+jar {
+    manifest {
+        attributes(
+                'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+                'Main-Class': 'game.Game'
+        )
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
 }
 
 compileKotlin {

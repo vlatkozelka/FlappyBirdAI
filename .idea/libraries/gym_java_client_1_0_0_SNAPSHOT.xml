@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="gym-java-client-1.0.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/gym-java-client-1.0.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/rl4j-api-1.0.0-SNAPSHOT.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/rl4j-core-1.0.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/libs/gym-java-client-1.0.0-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/rl4j-api-1.0.0-SNAPSHOT-javadoc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/rl4j-core-1.0.0-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/libs/gym-java-client-1.0.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/rl4j-api-1.0.0-SNAPSHOT-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
