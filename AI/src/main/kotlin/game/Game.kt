@@ -22,7 +22,7 @@ import javax.swing.JFrame
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
 
-class Game : MDP<GamePanel, Int, ActionSpace<Int>> {
+class Game : MDP<GamePanel, Int, DiscreteSpace> {
     val screenWidth = SCREEN_WIDTH
     val screenHeight = SCREEN_HEIGHT
 
@@ -193,7 +193,7 @@ class Game : MDP<GamePanel, Int, ActionSpace<Int>> {
 
 
     //MDP methods
-    override fun getActionSpace(): ActionSpace<Int> {
+    override fun getActionSpace(): DiscreteSpace {
         return discreteSpace
     }
 
@@ -205,7 +205,7 @@ class Game : MDP<GamePanel, Int, ActionSpace<Int>> {
         return gameOver
     }
 
-    override fun newInstance(): MDP<GamePanel, Int, ActionSpace<Int>> {
+    override fun newInstance(): MDP<GamePanel, Int, DiscreteSpace> {
         return Game()
     }
 
