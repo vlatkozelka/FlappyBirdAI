@@ -13,10 +13,7 @@ import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscrete
 import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscreteConv
 import org.deeplearning4j.rl4j.mdp.MDP
 import org.deeplearning4j.rl4j.network.ac.ActorCriticFactoryCompGraphStdConv
-import org.deeplearning4j.rl4j.space.ActionSpace
-import org.deeplearning4j.rl4j.space.ArrayObservationSpace
-import org.deeplearning4j.rl4j.space.DiscreteSpace
-import org.deeplearning4j.rl4j.space.ObservationSpace
+import org.deeplearning4j.rl4j.space.*
 import org.deeplearning4j.rl4j.util.DataManager
 import java.awt.Dimension
 import java.awt.event.WindowEvent
@@ -223,7 +220,6 @@ class Game : MDP<GamePanel, Int, ActionSpace<Int>> {
 
     override fun step(action: Int?): StepReply<GamePanel> {
         val reward = nextStep(action == 1)
-
         return StepReply(panel, reward, gameOver, null)
     }
 
@@ -235,13 +231,13 @@ class Game : MDP<GamePanel, Int, ActionSpace<Int>> {
 
         var ALE_HP = IHistoryProcessor.Configuration(
                 4, //History length
-                84, //resize width
-                110, //resize height
-                84, //crop width
-                84, //crop height
+                SCREEN_WIDTH / 10, //resize width
+                SCREEN_HEIGHT / 10, //resize height
+                SCREEN_WIDTH / 10, //crop width
+                SCREEN_HEIGHT / 10, //crop height
                 0, //cropping x offset
                 0, //cropping y offset
-                4        //skip mod (one frame is picked every x
+                1        //skip mod (one frame is picked every x
         )
 
         var ALE_A3C = A3CDiscrete.A3CConfiguration(
@@ -269,12 +265,11 @@ class Game : MDP<GamePanel, Int, ActionSpace<Int>> {
             //record the training data in rl4j-data in a new folder
             val manager = DataManager(true)
 
-            val mdp = Game()
+            val game = Game()
 
 
             //setup the training
-            val a3c = A3CDiscreteConv(mdp, ALE_NET_A3C, ALE_HP, ALE_A3C,manager)
-            //val a3c = A3CDiscreteConv(mdp, ALE_NET_A3C, ALE_HP, ALE_A3C, manager)
+            val a3c = A3CDiscreteConv(game, ALE_NET_A3C, ALE_HP, ALE_A3C, manager)
 
             //start the training
             a3c.train()
@@ -283,10 +278,11 @@ class Game : MDP<GamePanel, Int, ActionSpace<Int>> {
             a3c.getPolicy().save("ale-a3c.model")
 
             //close the ALE env
-            mdp!!.close()
+            game.close()
 
 
         }
+
     }
 
 
