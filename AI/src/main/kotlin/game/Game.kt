@@ -12,6 +12,9 @@ import org.deeplearning4j.optimize.listeners.checkpoint.CheckpointListener
 import org.deeplearning4j.rl4j.learning.IHistoryProcessor
 import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscrete
 import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscreteConv
+import org.deeplearning4j.rl4j.learning.sync.qlearning.QLearning
+import org.deeplearning4j.rl4j.learning.sync.qlearning.discrete.QLearningDiscreteConv
+import org.deeplearning4j.rl4j.learning.sync.qlearning.discrete.QLearningDiscreteDense
 import org.deeplearning4j.rl4j.mdp.MDP
 import org.deeplearning4j.rl4j.network.ac.ActorCriticFactoryCompGraphStdConv
 import org.deeplearning4j.rl4j.space.*
@@ -24,6 +27,11 @@ import java.awt.event.WindowEvent.WINDOW_CLOSING
 import java.util.concurrent.TimeUnit
 import javax.swing.JFrame
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
+import org.nd4j.linalg.learning.config.Adam
+import org.deeplearning4j.rl4j.network.dqn.DQNFactoryStdDense
+import org.deeplearning4j.rl4j.policy.DQNPolicy
+import org.deeplearning4j.rl4j.learning.HistoryProcessor
+import org.deeplearning4j.rl4j.network.dqn.DQNFactoryStdConv
 
 
 class Game : MDP<GamePanel, Int, DiscreteSpace> {
@@ -45,7 +53,8 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     var highScore = 0
     var reward = 0.0
     var ticksSinceLastSpawn = 0
-
+    var ticksSinceLastJump = 0
+    var didJump = false
     private val screenBuffer: ByteArray
 
 
@@ -103,6 +112,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
     fun resetGame() {
         println("calling reset")
+        ticksSinceLastJump = 0
         ticksSinceLastSpawn = 0
         score = 0
         gameObjects.clear()
@@ -119,9 +129,21 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         gameObjects.add(player)
         gameObjects.add(firstObstacle)
         gameOver = false
+        panel.gameOver = false
     }
 
     fun nextStep(doJump: Boolean): Double {
+
+        ticksSinceLastJump++
+
+        val jump = doJump /* && ticksSinceLastJump > 6
+        if (jump) {
+            ticksSinceLastJump = 0
+            println("bot was allowed to jump")
+        }else if(doJump){
+            println("bot tried to jump but wasnt allowed to")
+        }*/
+
         ticksSinceLastSpawn++
         fun createAndAddObstacle() {
             ticksSinceLastSpawn = 0
@@ -170,7 +192,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
             }
 
 
-            if (doJump) {
+            if (jump) {
                 player.jump()
             }
 
@@ -191,16 +213,16 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
         if (!gameOver) {
             score++
-        }else{
-            highScore = Math.max(score,highScore)
+        } else {
+            highScore = Math.max(score, highScore)
             println("game over, score: $score!")
             println("Highest score: $highScore")
         }
 
-        reward = if(gameOver){
+        reward = if (gameOver) {
             -1000.0
-        }else{
-            Math.abs(10.0/player.y) + Math.abs(10.0/player.speedY)
+        } else {
+            1.0
         }
 
 
@@ -238,7 +260,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     override fun step(action: Int?): StepReply<GamePanel> {
-        println("calling step with action $action")
+        // println("calling step with action $action")
         val reward = nextStep(action == 1)
         return StepReply(panel, reward, gameOver, null)
     }
@@ -247,6 +269,62 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     companion object {
         const val SCREEN_WIDTH = 1000
         const val SCREEN_HEIGHT = 500
+
+        var MALMO_QL = QLearning.QLConfiguration(123, //Random seed
+                Int.MAX_VALUE, //Max step By epoch
+                Int.MAX_VALUE, //Max step
+                50000, //Max size of experience replay
+                32, //size of batches
+                500, //target update (hard)
+                10, //num step noop warmup
+                1.0, //reward scaling
+                0.99, //gamma
+                1.0, //td-error clipping
+                0.1f, //min epsilon
+                10000, //num step for eps greedy anneal
+                true //double DQN
+        )
+
+        var MALMO_NET = DQNFactoryStdConv.Configuration(
+                0.005, //learning rate
+                0.0,
+                Adam(0.005) // updater
+                , null// Listeners
+        )//l2 regularization
+
+        /*
+     * The pixel input is 320x240, but using the history processor we scale that to 160x120
+     * and then crop out a 160x80 segment to remove pixels that aren't needed
+     */
+        var MALMO_HPROC = IHistoryProcessor.Configuration(1, // Number of frames
+                100, // Scaled width
+                50, // Scaled height
+                100, // Cropped width
+                50, // Cropped height
+                0, // X offset
+                0, // Y offset
+                1 // Number of frames to skip
+        )
+
+        @JvmStatic
+        fun main(args: Array<String>) {
+            val dataManager = DataManager()
+
+            val mdp = Game()
+
+            val dql = QLearningDiscreteConv<GamePanel>(mdp, MALMO_NET, MALMO_HPROC, MALMO_QL, dataManager)
+
+            dql.train()
+
+            val policy = dql.policy
+
+            policy.save("dqlpolicy")
+
+            mdp.close()
+
+
+        }
+
     }
 
 

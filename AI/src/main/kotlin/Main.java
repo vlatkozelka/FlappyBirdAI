@@ -8,6 +8,7 @@ import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscrete;
 import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscreteConv;
 import org.deeplearning4j.rl4j.network.ac.ActorCriticFactoryCompGraphStdConv;
 import org.deeplearning4j.rl4j.util.DataManager;
+import org.nd4j.linalg.learning.config.Adam;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -20,14 +21,14 @@ public class Main {
 
     private final static IHistoryProcessor.Configuration ALE_HP =
             new IHistoryProcessor.Configuration(
-                    4, //History length
-                    SCREEN_WIDTH / 10, //resize width
-                    SCREEN_HEIGHT / 10, //resize height
-                    SCREEN_WIDTH / 10, //crop width
-                    SCREEN_HEIGHT / 10, //crop height
+                    15, //History length
+                     100, //resize width
+                     50, //resize height
+                     100, //crop width
+                     50, //crop height
                     0, //cropping x offset
                     0, //cropping y offset
-                    1        //skip mod (one frame is picked every x
+                    10      //skip mod (one frame is picked every x
             );
 
     private final static A3CDiscrete.A3CConfiguration ALE_A3C =
@@ -43,17 +44,11 @@ public class Main {
                     10.0            //td-error clipping
             );
 
-    private static CheckpointListener listener = new CheckpointListener.Builder("test")
-            .saveEvery(100L, TimeUnit.SECONDS)
-            .build();
-
-    private static ArrayList<TrainingListener> listeners = new ArrayList<>();
-
 
     private final static ActorCriticFactoryCompGraphStdConv.Configuration ALE_NET_A3C =
             new ActorCriticFactoryCompGraphStdConv.Configuration(
                     0.00025, //learning rate
-                    null, null, false
+                    new Adam(0.0005), null, false
             );
 
 
@@ -69,11 +64,13 @@ public class Main {
         }
         try {
             //record the training data in rl4j-data in a new folder
-           DataManager manager = new DataManager(true);
+            DataManager manager = new DataManager(true);
 
             Game game = new Game();
 
             //setup the training
+
+
             A3CDiscreteConv a3c = new A3CDiscreteConv(game, ALE_NET_A3C, ALE_HP, ALE_A3C, manager);
 
             //start the training

@@ -1,5 +1,6 @@
 package game.gameobject
 
+import game.gameobject.prefabs.Player
 import java.awt.Color
 import java.awt.Graphics
 import java.awt.Rectangle
@@ -59,6 +60,10 @@ abstract class GameObject() {
         speedY += accelerationY.toInt()
         x += speedX
         y -= speedY
+
+       /* when(this){
+            is Player -> println("player force Y = ${this.force[1]}")
+        }*/
     }
 
 
