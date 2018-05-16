@@ -28,6 +28,8 @@ abstract class Player : GameObject() {
     fun reset() {
         x = 100
         y = 250
+        speedX = 0
+        speedY = 0
         width = 25
         height = 25
         weight = 10

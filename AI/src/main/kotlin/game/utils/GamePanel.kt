@@ -1,5 +1,6 @@
 package game.utils
 
+import game.Game
 import game.gameobject.GameObject
 import org.deeplearning4j.rl4j.space.Encodable
 import java.awt.Color
@@ -10,16 +11,29 @@ import javax.swing.JPanel
 class GamePanel(private val gameObjects: MutableList<GameObject>) : JPanel(), Encodable {
 
     override fun toArray(): DoubleArray {
-        val array = DoubleArray(width * height)
+        val array = DoubleArray(Game.SCREEN_WIDTH * Game.SCREEN_HEIGHT * 3)
         var counter = 0
-        for (i in 0..width) {
-            for (j in 0..height) {
-                array[counter] = screenshot.getRGB(i, j).toDouble()
-                counter++
+        var argb: Int
+        for (i in 0 until Game.SCREEN_WIDTH) {
+            for (j in 0 until Game.SCREEN_HEIGHT) {
+                try {
+                    argb = screenshot.getRGB(i, j)
+                    val r = argb shr 16 and 0xFF
+                    val g = argb shr 8 and 0xFF
+                    val b = argb shr 0 and 0xFF
+
+                    array[counter] = r.toDouble()
+                    array[counter + 1] = g.toDouble()
+                    array[counter + 2] = b.toDouble()
+                    counter++
+                } catch (ex: ArrayIndexOutOfBoundsException) {
+                    ex.printStackTrace()
+                }
             }
         }
         return array
     }
+
     var gameOver = false
     lateinit var screenshot: BufferedImage
         private set

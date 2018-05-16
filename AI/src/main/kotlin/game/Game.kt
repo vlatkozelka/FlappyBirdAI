@@ -8,6 +8,7 @@ import game.gameobject.prefabs.Player
 import game.utils.Constants.SPEED_X
 import game.utils.GamePanel
 import org.deeplearning4j.gym.StepReply
+import org.deeplearning4j.optimize.listeners.checkpoint.CheckpointListener
 import org.deeplearning4j.rl4j.learning.IHistoryProcessor
 import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscrete
 import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscreteConv
@@ -20,6 +21,7 @@ import java.awt.Color
 import java.awt.Dimension
 import java.awt.event.WindowEvent
 import java.awt.event.WindowEvent.WINDOW_CLOSING
+import java.util.concurrent.TimeUnit
 import javax.swing.JFrame
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
@@ -30,7 +32,6 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
     val gameObjects = mutableListOf<GameObject>()
     val objectsPendingRemoval = mutableListOf<GameObject>()
-    val jumps = mutableListOf<Boolean>()
     var isObstacleDown = true
     var gameOver = false
     var obstacleId: Long = 2
@@ -63,8 +64,9 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     var shape: IntArray
 
     init {
+        println("opened new frame")
         frame = JFrame("Flappy Bird AI")
-        frame.size = Dimension(screenWidth, screenHeight)
+        frame.size = Dimension(screenWidth + 20, screenHeight + 50)
         frame.setLocationRelativeTo(null)
         frame.isResizable = false
         frame.defaultCloseOperation = EXIT_ON_CLOSE
@@ -93,10 +95,12 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     fun closeGame() {
+        println("closing game")
         frame.dispatchEvent(WindowEvent(frame, WINDOW_CLOSING))
     }
 
     fun resetGame() {
+        println("calling reset")
         ticksSinceLastSpawn = 0
         score = 0
         gameObjects.clear()
@@ -117,8 +121,8 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
     fun nextStep(doJump: Boolean): Double {
         ticksSinceLastSpawn++
-        jumps.add(true)
         fun createAndAddObstacle() {
+            ticksSinceLastSpawn = 0
             val x = if (isObstacleDown) {
                 object : Obstacle(screenWidth - Obstacle.OBSTACLE_WIDTH / 2, screenHeight - OBSTACLE_HEIGHT / 2, -Obstacle.OBSTACLE_WIDTH - 100) {
                     override fun onDestroy() {
@@ -159,16 +163,14 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
             //spawn obstacles if not first update
 
 
-            if (SPEED_X * ticksSinceLastSpawn > Obstacle.OBSTACLE_WIDTH + Obstacle.OBSTACLE_WIDTH / 2) {
+            if (SPEED_X * ticksSinceLastSpawn > Obstacle.OBSTACLE_WIDTH + Obstacle.OBSTACLE_WIDTH * 2) {
                 createAndAddObstacle()
             }
 
 
-            if (jumps.isNotEmpty()) {
+            if (doJump) {
                 player.jump()
-                jumps.removeAt(jumps.size - 1)
             }
-
 
             for (gameObject in gameObjects) {
                 gameObject.onUpdate()
@@ -181,11 +183,15 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
             player.stopJump()
         } else if (!gameOver) {
-            if (jumps.isNotEmpty()) {
-                jumps.removeAt(jumps.size - 1)
-            }
+
         }
         panel.repaint()
+
+        if (!gameOver) {
+            score++
+        }else{
+            println("game over, score: $score!")
+        }
 
         return if (gameOver) {
             -1000.0
@@ -210,6 +216,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     override fun newInstance(): MDP<GamePanel, Int, DiscreteSpace> {
+        println("called new instance")
         return Game()
     }
 
@@ -223,70 +230,15 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     override fun step(action: Int?): StepReply<GamePanel> {
+        println("calling step with action $action")
         val reward = nextStep(action == 1)
         return StepReply(panel, reward, gameOver, null)
     }
 
 
     companion object {
-
         const val SCREEN_WIDTH = 1000
         const val SCREEN_HEIGHT = 500
-
-        var ALE_HP = IHistoryProcessor.Configuration(
-                4, //History length
-                SCREEN_WIDTH / 10, //resize width
-                SCREEN_HEIGHT / 10, //resize height
-                SCREEN_WIDTH / 10, //crop width
-                SCREEN_HEIGHT / 10, //crop height
-                0, //cropping x offset
-                0, //cropping y offset
-                1        //skip mod (one frame is picked every x
-        )
-
-        var ALE_A3C = A3CDiscrete.A3CConfiguration(
-                123, //Random seed
-                10000, //Max step By epoch
-                8000000, //Max step
-                8, //Number of threads
-                32, //t_max
-                500, //num step noop warmup
-                0.1, //reward scaling
-                0.99, //gamma
-                10.0            //td-error clipping
-        )
-
-
-        val ALE_NET_A3C = ActorCriticFactoryCompGraphStdConv.Configuration(
-                0.00025, //learning rate
-                null, null, false
-        )
-
-
-        @JvmStatic
-        fun main(args: Array<String>) {
-
-            //record the training data in rl4j-data in a new folder
-            val manager = DataManager(true)
-
-            val game = Game()
-
-
-            //setup the training
-            val a3c = A3CDiscreteConv(game, ALE_NET_A3C, ALE_HP, ALE_A3C, manager)
-
-            //start the training
-            a3c.train()
-
-            //save the model at the end
-            a3c.getPolicy().save("ale-a3c.model")
-
-            //close the ALE env
-            game.close()
-
-
-        }
-
     }
 
 

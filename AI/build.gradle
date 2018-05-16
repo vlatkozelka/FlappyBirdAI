@@ -34,13 +34,19 @@ dependencies {
     compile group: 'org.bytedeco', name: 'javacpp', version: '1.4.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "org.deeplearning4j:deeplearning4j-core:${dl4j_version}"
-    compile "org.nd4j:nd4j-native-platform:${dl4j_version}"
-    //compile "org.nd4j:nd4j-cuda-9.1-platform:${dl4j_version}"
-    compile "org.nd4j:nd4j-cuda-9.1:${dl4j_version}"
+    //compile "org.nd4j:nd4j-native-platform:${dl4j_version}"
+    compile "org.nd4j:nd4j-cuda-8.0-platform:${dl4j_version}"
+    //compile "org.nd4j:nd4j-cuda-8.0:${dl4j_version}"
     compile "org.slf4j:slf4j-simple:1.7.25"
     compile "org.slf4j:slf4j-api:1.7.25"
+    compile 'org.bytedeco.javacpp-presets:opencv:3.2.0-1.3'
+    compile 'org.bytedeco.javacpp-presets:opencv:3.2.0-1.3:windows-x86_64'
+    compile 'org.bytedeco.javacpp-presets:openblas:0.2.20-1.3'
+    compile 'org.bytedeco.javacpp-presets:openblas:0.2.20-1.3:windows-x86_64'
     compile group: 'org.json', name: 'json', version: '20180130'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
+    compile group: 'org.apache.commons', name: 'commons-collections4', version: '4.0'
+    compile 'org.bytedeco.javacpp-presets:ffmpeg:3.4.2-1.4.1'
     compile fileTree(dir: 'libs', include: '*.jar')
 }
 
