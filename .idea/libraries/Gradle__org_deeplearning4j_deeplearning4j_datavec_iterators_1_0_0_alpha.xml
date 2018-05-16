@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.deeplearning4j:deeplearning4j-datavec-iterators:1.0.0-alpha">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/deeplearning4j-datavec-iterators/1.0.0-alpha/1f8ab7108d4dfaf94b22e36e03c36587c8597254/deeplearning4j-datavec-iterators-1.0.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/deeplearning4j-datavec-iterators/1.0.0-alpha/d2cc051c90dff272c39a90ee4c5bdf982ec8945e/deeplearning4j-datavec-iterators-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

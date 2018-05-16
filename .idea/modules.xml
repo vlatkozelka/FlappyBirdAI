@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AI/AI.iml" filepath="$PROJECT_DIR$/.idea/modules/AI/AI.iml" group="AI" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AI/AI_main.iml" filepath="$PROJECT_DIR$/.idea/modules/AI/AI_main.iml" group="AI" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AI/AI_test.iml" filepath="$PROJECT_DIR$/.idea/modules/AI/AI_test.iml" group="AI" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MNIST.iml" filepath="$PROJECT_DIR$/.idea/modules/MNIST.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MNIST_main.iml" filepath="$PROJECT_DIR$/.idea/modules/MNIST_main.iml" group="MNIST" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MNIST_test.iml" filepath="$PROJECT_DIR$/.idea/modules/MNIST_test.iml" group="MNIST" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.nd4j:nd4j-cuda-9.1:windows-x86_64:1.0.0-alpha">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.nd4j/nd4j-cuda-9.1/1.0.0-alpha/2f5dc6d8f51d834dcc431bda66f110dd73a0f846/nd4j-cuda-9.1-1.0.0-alpha-windows-x86_64.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.nd4j/nd4j-cuda-9.1/1.0.0-alpha/cc977146d562979dc8b0a61c037c1929cc15cf93/nd4j-cuda-9.1-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

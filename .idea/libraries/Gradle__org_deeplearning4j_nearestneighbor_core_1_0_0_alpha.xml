@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.deeplearning4j:nearestneighbor-core:1.0.0-alpha">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/nearestneighbor-core/1.0.0-alpha/6b753191f5ed973332d0a6f91f91feb77d9d4beb/nearestneighbor-core-1.0.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/nearestneighbor-core/1.0.0-alpha/c06f9e3cf6791741613a3e93c55f04c16451e22f/nearestneighbor-core-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

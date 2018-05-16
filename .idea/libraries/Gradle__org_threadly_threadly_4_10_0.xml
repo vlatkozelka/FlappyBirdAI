@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.threadly:threadly:4.10.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.threadly/threadly/4.10.0/6b669a861f777e7a1087844f01a5fe8e5ed9aa23/threadly-4.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.threadly/threadly/4.10.0/6879efa31f8c4e38a1545d37320e3c5105804e15/threadly-4.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

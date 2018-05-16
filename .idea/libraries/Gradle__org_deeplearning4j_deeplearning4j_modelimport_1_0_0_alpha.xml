@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.deeplearning4j:deeplearning4j-modelimport:1.0.0-alpha">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/deeplearning4j-modelimport/1.0.0-alpha/106cb5021416a152a0acd0ebcb30cc56bf0fb53e/deeplearning4j-modelimport-1.0.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/deeplearning4j-modelimport/1.0.0-alpha/3e1201a18513c14ebba06f772b7142caabe41025/deeplearning4j-modelimport-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

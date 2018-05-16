@@ -42,6 +42,8 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     var score = 0
+    var highScore = 0
+    var reward = 0.0
     var ticksSinceLastSpawn = 0
 
     private val screenBuffer: ByteArray
@@ -190,14 +192,20 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         if (!gameOver) {
             score++
         }else{
+            highScore = Math.max(score,highScore)
             println("game over, score: $score!")
+            println("Highest score: $highScore")
         }
 
-        return if (gameOver) {
+        reward = if(gameOver){
             -1000.0
-        } else {
-            1.0
+        }else{
+            Math.abs(10.0/player.y) + Math.abs(10.0/player.speedY)
         }
+
+
+
+        return reward
 
     }
 

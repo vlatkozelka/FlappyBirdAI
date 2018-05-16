@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.eclipse.collections:eclipse-collections-api:9.1.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections-api/9.1.0/4f3eda652a7fb741dd9a302e80bdfcf48899836b/eclipse-collections-api-9.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.collections/eclipse-collections-api/9.1.0/9b44f949c1d88e019f55c73bc1919ab37fc97c57/eclipse-collections-api-9.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

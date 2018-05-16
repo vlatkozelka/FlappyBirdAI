@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.datavec:datavec-data-image:1.0.0-alpha">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.datavec/datavec-data-image/1.0.0-alpha/ee4755899a9ae9f1f915498f5d30c1182de16ba6/datavec-data-image-1.0.0-alpha.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.datavec/datavec-data-image/1.0.0-alpha/4d8b5b2ae0b30bf9e4f1259bec941af4ead78f3d/datavec-data-image-1.0.0-alpha-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
