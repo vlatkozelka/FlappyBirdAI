@@ -8,30 +8,23 @@ import game.gameobject.prefabs.Player
 import game.utils.Constants.SPEED_X
 import game.utils.GamePanel
 import org.deeplearning4j.gym.StepReply
-import org.deeplearning4j.optimize.listeners.checkpoint.CheckpointListener
 import org.deeplearning4j.rl4j.learning.IHistoryProcessor
-import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscrete
-import org.deeplearning4j.rl4j.learning.async.a3c.discrete.A3CDiscreteConv
 import org.deeplearning4j.rl4j.learning.sync.qlearning.QLearning
 import org.deeplearning4j.rl4j.learning.sync.qlearning.discrete.QLearningDiscreteConv
-import org.deeplearning4j.rl4j.learning.sync.qlearning.discrete.QLearningDiscreteDense
 import org.deeplearning4j.rl4j.mdp.MDP
-import org.deeplearning4j.rl4j.network.ac.ActorCriticFactoryCompGraphStdConv
-import org.deeplearning4j.rl4j.space.*
+import org.deeplearning4j.rl4j.network.dqn.DQN
+import org.deeplearning4j.rl4j.network.dqn.DQNFactoryStdConv
+import org.deeplearning4j.rl4j.policy.DQNPolicy
+import org.deeplearning4j.rl4j.space.ArrayObservationSpace
+import org.deeplearning4j.rl4j.space.DiscreteSpace
+import org.deeplearning4j.rl4j.space.ObservationSpace
 import org.deeplearning4j.rl4j.util.DataManager
-import org.nd4j.shade.jackson.databind.ObjectMapper
-import java.awt.Color
+import org.nd4j.linalg.learning.config.Adam
 import java.awt.Dimension
 import java.awt.event.WindowEvent
 import java.awt.event.WindowEvent.WINDOW_CLOSING
-import java.util.concurrent.TimeUnit
 import javax.swing.JFrame
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
-import org.nd4j.linalg.learning.config.Adam
-import org.deeplearning4j.rl4j.network.dqn.DQNFactoryStdDense
-import org.deeplearning4j.rl4j.policy.DQNPolicy
-import org.deeplearning4j.rl4j.learning.HistoryProcessor
-import org.deeplearning4j.rl4j.network.dqn.DQNFactoryStdConv
 
 
 class Game : MDP<GamePanel, Int, DiscreteSpace> {
