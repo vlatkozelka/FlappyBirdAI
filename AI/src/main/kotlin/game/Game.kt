@@ -14,7 +14,6 @@ import org.deeplearning4j.rl4j.learning.sync.qlearning.discrete.QLearningDiscret
 import org.deeplearning4j.rl4j.mdp.MDP
 import org.deeplearning4j.rl4j.network.dqn.DQN
 import org.deeplearning4j.rl4j.network.dqn.DQNFactoryStdConv
-import org.deeplearning4j.rl4j.policy.DQNPolicy
 import org.deeplearning4j.rl4j.space.ArrayObservationSpace
 import org.deeplearning4j.rl4j.space.DiscreteSpace
 import org.deeplearning4j.rl4j.space.ObservationSpace
@@ -23,7 +22,10 @@ import org.nd4j.linalg.learning.config.Adam
 import java.awt.Dimension
 import java.awt.event.WindowEvent
 import java.awt.event.WindowEvent.WINDOW_CLOSING
+import javax.swing.JButton
+import javax.swing.JFileChooser
 import javax.swing.JFrame
+import javax.swing.JOptionPane
 import javax.swing.WindowConstants.EXIT_ON_CLOSE
 
 
@@ -44,7 +46,6 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
     var score = 0
     var highScore = 0
-    var reward = 0.0
     var ticksSinceLastSpawn = 0
     var ticksSinceLastJump = 0
     var didJump = false
@@ -113,7 +114,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         player.reset()
         obstacleId = 2
         isObstacleDown = true
-        val firstObstacle = object : Obstacle(1000 - OBSTACLE_WIDTH / 2, OBSTACLE_HEIGHT / 2, -OBSTACLE_WIDTH - 100) {
+        val firstObstacle = object : Obstacle(SCREEN_WIDTH + OBSTACLE_WIDTH / 2, OBSTACLE_HEIGHT / 2, -OBSTACLE_WIDTH - 100) {
             override fun onDestroy() {
                 objectsPendingRemoval.add(this)
             }
@@ -126,7 +127,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     fun nextStep(doJump: Boolean): Double {
-
+        var reward = 0.1
         ticksSinceLastJump++
 
         val jump = doJump /* && ticksSinceLastJump > 6
@@ -141,14 +142,14 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         fun createAndAddObstacle() {
             ticksSinceLastSpawn = 0
             val x = if (isObstacleDown) {
-                object : Obstacle(screenWidth - Obstacle.OBSTACLE_WIDTH / 2, screenHeight - OBSTACLE_HEIGHT / 2, -Obstacle.OBSTACLE_WIDTH - 100) {
+                object : Obstacle(screenWidth + OBSTACLE_WIDTH / 2, screenHeight - OBSTACLE_HEIGHT / 2, -Obstacle.OBSTACLE_WIDTH - 100) {
                     override fun onDestroy() {
                         objectsPendingRemoval.add(this)
                     }
 
                 }
             } else {
-                object : Obstacle(screenWidth - Obstacle.OBSTACLE_WIDTH / 2, Obstacle.OBSTACLE_HEIGHT / 2, -Obstacle.OBSTACLE_WIDTH - 100) {
+                object : Obstacle(screenWidth + OBSTACLE_WIDTH / 2, Obstacle.OBSTACLE_HEIGHT / 2, -Obstacle.OBSTACLE_WIDTH - 100) {
                     override fun onDestroy() {
                         objectsPendingRemoval.add(this)
                     }
@@ -170,11 +171,18 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         if (!gameOver) {
             //check for collisions
             val obstacles = gameObjects.filterIndexed({ index, gameObject -> index > 0 })
+            var playerPosX = player.x + player.width / 2
+            var pipePos: Double
             for (obstacle in obstacles) {
                 if (player.doesCollideWithOther(obstacle)) {
                     gameOver = true
                     panel.gameOver = true
                 }
+                pipePos = obstacle.x + obstacle.width / 2.0
+                if (pipePos <= playerPosX && playerPosX < pipePos + 4) {
+                    reward = 1.0
+                }
+
             }
 
             //spawn obstacles if not first update
@@ -192,6 +200,10 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
             for (gameObject in gameObjects) {
                 gameObject.onUpdate()
             }
+
+            //println("force Y ${player.force[1]}")
+            // println("speed Y ${player.speedY}")
+
 
             if (player.y - player.height / 2 < 0 || player.y + player.height / 2 > 500) {
                 gameOver = true
@@ -212,16 +224,11 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
             println("Highest score: $highScore")
         }
 
-        reward = if (gameOver) {
-            -1000.0
-        } else {
-            1.0
+        if (gameOver) {
+            reward = -1.0
         }
 
-
-
         return reward
-
     }
 
 
@@ -253,8 +260,10 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     override fun step(action: Int?): StepReply<GamePanel> {
-        // println("calling step with action $action")
+        //println("calling step with action $action")
+        //println("Game over value is $gameOver")
         val reward = nextStep(action == 1)
+        //println("rewarded $reward")
         return StepReply(panel, reward, gameOver, null)
     }
 
@@ -263,9 +272,10 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         const val SCREEN_WIDTH = 1000
         const val SCREEN_HEIGHT = 500
 
-        var MALMO_QL = QLearning.QLConfiguration(123, //Random seed
-                Int.MAX_VALUE, //Max step By epoch
-                Int.MAX_VALUE, //Max step
+        var Flappy_QL = QLearning.QLConfiguration(
+                123, //Random seed
+                Int.MAX_VALUE, //Number of steps before BOT resets the game
+                Int.MAX_VALUE, //Number of rounds before BOT stops the game
                 50000, //Max size of experience replay
                 32, //size of batches
                 500, //target update (hard)
@@ -274,11 +284,11 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
                 0.99, //gamma
                 1.0, //td-error clipping
                 0.1f, //min epsilon
-                10000, //num step for eps greedy anneal
-                true //double DQN
+                2000000, //num step for eps greedy anneal
+                false //double DQN
         )
 
-        var MALMO_NET = DQNFactoryStdConv.Configuration(
+        var FLAPPY_NET = DQNFactoryStdConv.Configuration(
                 0.005, //learning rate
                 0.0,
                 Adam(0.005) // updater
@@ -289,7 +299,8 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
      * The pixel input is 320x240, but using the history processor we scale that to 160x120
      * and then crop out a 160x80 segment to remove pixels that aren't needed
      */
-        var MALMO_HPROC = IHistoryProcessor.Configuration(1, // Number of frames
+        var FLAPPY_HPROC = IHistoryProcessor.Configuration(
+                1, // Number of frames
                 100, // Scaled width
                 50, // Scaled height
                 100, // Cropped width
@@ -301,19 +312,53 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
         @JvmStatic
         fun main(args: Array<String>) {
+            val dialogButton = JOptionPane.YES_NO_OPTION
             val dataManager = DataManager()
+            val mdp: Game
+            var dql: QLearningDiscreteConv<GamePanel>? = null
 
-            val mdp = Game()
+            var option = JOptionPane.showConfirmDialog(null,
+                    "Would you like to load a saved network", "Flappy Bird AI", dialogButton)
+            if (option == 0) {
+                val fileChooser = JFileChooser()
+                fileChooser.showOpenDialog(null)
+                val loadFile = fileChooser.selectedFile
+                val dqn = DQN.load(loadFile.absolutePath)
+                option = JOptionPane.showConfirmDialog(null,
+                        "Would you like to continue training?", "Flappy Bird AI", dialogButton)
+                if (option == 1) {
+                    mdp = Game()
+                    dql = QLearningDiscreteConv<GamePanel>(mdp, dqn, FLAPPY_HPROC, Flappy_QL, dataManager)
+                    dql.train()
+                    dql.policy.save("dqlpolicy")
+                    mdp.close()
+                } else {
+                    mdp = Game()
+                    dql = QLearningDiscreteConv<GamePanel>(mdp, dqn, FLAPPY_HPROC, Flappy_QL, dataManager)
+                    dql.policy.play(mdp)
+                }
+            } else {
+                mdp = Game()
+                val saveFrame = JFrame()
+                saveFrame.setSize(200,200)
+                saveFrame.isResizable = false
+                val saveButton = JButton("Save neural network")
+                saveButton.setSize(200, 200)
+                saveFrame.contentPane = saveButton
+                saveButton.addActionListener({
+                    val fileChooser = JFileChooser()
+                    fileChooser.showOpenDialog(saveFrame)
+                    val f = fileChooser.selectedFile
+                    dql?.neuralNet?.save(f.outputStream())
+                })
 
-            val dql = QLearningDiscreteConv<GamePanel>(mdp, MALMO_NET, MALMO_HPROC, MALMO_QL, dataManager)
-
-            dql.train()
-
-            val policy = dql.policy
-
-            policy.save("dqlpolicy")
-
-            mdp.close()
+                saveFrame.isVisible = true
+                saveFrame.setLocationRelativeTo(null)
+                dql = QLearningDiscreteConv<GamePanel>(mdp, FLAPPY_NET, FLAPPY_HPROC, Flappy_QL, dataManager)
+                dql.train()
+                dql.policy.save("dqlpolicy")
+                mdp.close()
+            }
 
 
         }

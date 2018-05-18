@@ -18,7 +18,7 @@ abstract class Player : GameObject() {
     }
 
     fun jump() {
-        force[1] -= 40
+        force[1] -= 40 //40 for equal forces
     }
 
     fun stopJump() {

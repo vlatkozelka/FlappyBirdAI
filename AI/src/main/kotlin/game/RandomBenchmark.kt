@@ -15,7 +15,7 @@ class RandomBenchmark {
                 while (true) {
                     game.nextStep(ran.nextBoolean())
 
-                    Thread.sleep(1000 / 30)
+                    Thread.sleep(1000 / 20)
                     if(game.gameOver){
                         game.resetGame()
                     }

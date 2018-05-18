@@ -35,8 +35,8 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile "org.deeplearning4j:deeplearning4j-core:${dl4j_version}"
     //compile "org.nd4j:nd4j-native-platform:${dl4j_version}"
-    compile "org.nd4j:nd4j-cuda-9.1-platform:${dl4j_version}"
-    compile "org.nd4j:nd4j-cuda-9.1:${dl4j_version}"
+    compile "org.nd4j:nd4j-cuda-8.0-platform:${dl4j_version}"
+    compile "org.nd4j:nd4j-cuda-8.0:${dl4j_version}"
     compile "org.slf4j:slf4j-simple:1.7.25"
     compile "org.slf4j:slf4j-api:1.7.25"
     compile 'org.bytedeco.javacpp-presets:opencv:3.2.0-1.3'
