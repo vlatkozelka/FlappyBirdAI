@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1448d912-0aa5-4cba-9490-3ce313562694" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_bytedeco_javacpp_presets_cuda_9_1_7_1_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_bytedeco_javacpp_presets_cuda_linux_ppc64le_9_1_7_1_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_bytedeco_javacpp_presets_cuda_linux_x86_64_9_1_7_1_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_bytedeco_javacpp_presets_cuda_macosx_x86_64_9_1_7_1_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_bytedeco_javacpp_presets_cuda_platform_9_1_7_1_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_bytedeco_javacpp_presets_cuda_windows_x86_64_9_1_7_1_1_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_nd4j_nd4j_cuda_9_1_1_0_0_alpha.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_nd4j_nd4j_cuda_9_1_linux_x86_64_1_0_0_alpha.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_nd4j_nd4j_cuda_9_1_macosx_x86_64_1_0_0_alpha.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_nd4j_nd4j_cuda_9_1_platform_1_0_0_alpha.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_nd4j_nd4j_cuda_9_1_windows_x86_64_1_0_0_alpha.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/AI/AI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AI/AI.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/AI/AI_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AI/AI_main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/AI/AI_test.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AI/AI_test.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/AI/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$Companion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1$x$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1$x$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$player$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$resetGame$firstObstacle$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/gameobject/prefabs/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/gameobject/prefabs/Player.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dqlpolicy" beforeDir="false" afterPath="$PROJECT_DIR$/dqlpolicy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -87,42 +66,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Game.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1293">
-              <caret line="356" column="43" selection-start-line="356" selection-start-column="22" selection-end-line="356" selection-end-column="43" />
+            <state relative-caret-position="615">
+              <caret line="130" column="28" lean-forward="true" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
               <folding>
-                <element signature="e#1455#1551#0" />
-                <element signature="e#1490#1545#0" />
                 <element signature="n#!!doc;n#actions#0;n#!!block;n#Game#0" />
-                <element signature="e#2054#2836#0" />
                 <element signature="n#!!block;n#closeGame#0;n#!!block;n#Game#0" />
-                <element signature="n#!!block;n#resetGame#0;n#!!block;n#Game#0" />
-                <element signature="e#3358#3470#0" />
-                <element signature="e#3397#3460#0" />
-                <element signature="n#!!block;n#nextStep#0;n#!!block;n#Game#0" />
-                <element signature="e#3735#3965#0" />
-                <element signature="n#!!block;n#createAndAddObstacle#0;n#!!block;n#nextStep#0;n#!!block;n#Game#0" />
-                <element signature="e#4110#4416#1" />
-                <element signature="e#4257#4402#0" />
-                <element signature="e#4304#4383#0" />
-                <element signature="e#4422#4721#1" />
-                <element signature="e#4435#4579#0" />
-                <element signature="e#4610#4689#0" />
-                <element signature="e#4941#5075#1" />
-                <element signature="e#5100#6035#1" />
-                <element signature="e#5263#5574#1" />
-                <element signature="e#5328#5425#1" />
-                <element signature="e#5553#5599#1" />
-                <element signature="e#5596#5650#1" />
-                <element signature="e#5675#5720#1" />
-                <element signature="e#5766#5819#1" />
-                <element signature="e#5878#5963#1" />
-                <element signature="e#6056#6068#1" />
-                <element signature="e#6117#6148#1" />
-                <element signature="e#6154#6314#1" />
-                <element signature="e#6347#6378#1" />
                 <element signature="n#!!block;n#getActionSpace#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#getObservationSpace#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#isDone#0;n#!!block;n#Game#0" />
@@ -130,8 +81,79 @@
                 <element signature="n#!!block;n#reset#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#close#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#step#0;n#!!block;n#Game#0" />
-                <element signature="n#!!doc;n#FLAPPY_HPROC#0;n#!!block;n#Companion#0;n#!!block;n#Game#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameObject.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="960">
+              <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+              <folding>
+                <element signature="e#25#286#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Image.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/jdk1.8.0_25/src.zip!/java/awt/Image.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="198" column="28" selection-start-line="198" selection-start-column="28" selection-end-line="198" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GamePanel.kt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="62">
+              <caret line="37" column="42" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+              <folding>
+                <element signature="e#33#170#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Obstacle.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="61" />
+              <folding>
+                <element signature="e#33#200#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QLearningDiscreteConv.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/sync/qlearning/discrete/QLearningDiscreteConv.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConvolutionLayer.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/deeplearning4j-nn/1.0.0-alpha/4429816d777912efb537e354c0f5be7fcc5e6092/deeplearning4j-nn-1.0.0-alpha-sources.jar!/org/deeplearning4j/nn/layers/convolution/ConvolutionLayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="76" selection-start-line="76" selection-end-line="76" />
             </state>
           </provider>
         </entry>
@@ -139,7 +161,7 @@
       <file leaf-file-name="Main.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/main/Main.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
+            <state relative-caret-position="1197">
               <caret line="68" column="124" selection-start-line="68" selection-start-column="124" selection-end-line="68" selection-end-column="124" />
               <folding>
                 <element signature="e#14#231#0" expanded="true" />
@@ -991,16 +1013,16 @@
         <option value="$PROJECT_DIR$/Game/src/main/kotlin/game/Game.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/MLPMnistSingleLayerExample.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/LenetMnistExample.kt" />
-        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt" />
-        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/Main.java" />
-        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt" />
         <option value="$PROJECT_DIR$/AI/build.gradle" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/Main.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/main/MainForm.form" />
-        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/main/Main.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt" />
+        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt" />
+        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt" />
+        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" />
+        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt" />
       </list>
     </option>
@@ -1019,6 +1041,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1089,6 +1112,16 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="kotlin" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FlappyBirdsAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlappyBirdsAI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="AI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -1107,7 +1140,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1256,21 +1288,22 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.5363129" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.536255" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35298803" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35219124" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32988048" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23688394" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24085851" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.1999205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1289,28 +1322,28 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3298887" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Gradle" order="5" visible="true" weight="0.1999205" />
       <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3697211" />
       <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23251192" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32988048" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32988048" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32988048" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3298887" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.060557768" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1394,27 +1427,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/async/a3c/discrete/A3CDiscreteConv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="61" lean-forward="true" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/jdk1.8.0_25/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="371" selection-start-line="371" selection-end-line="371" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="12" column="41" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.bytedeco.javacpp-presets/ffmpeg/3.4.2-1.4.1/d53d15f0e2befa923997c7fb6e8e32fdff612d66/ffmpeg-3.4.2-1.4.1-sources.jar!/org/bytedeco/javacpp/avformat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="227">
@@ -1454,13 +1466,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/deeplearning4j-nn/1.0.0-alpha/4429816d777912efb537e354c0f5be7fcc5e6092/deeplearning4j-nn-1.0.0-alpha-sources.jar!/org/deeplearning4j/nn/layers/convolution/ConvolutionLayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="78" column="73" selection-start-line="78" selection-start-column="73" selection-end-line="78" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -1569,16 +1574,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1178">
-          <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
-          <folding>
-            <element signature="e#25#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/sync/SyncLearning.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -1593,16 +1588,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/Main.java" />
     <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/IHistoryProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
@@ -1610,16 +1596,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/main/MainForm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/main/MainForm.form">
-      <provider selected="true" editor-type-id="ui-designer" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/main/MainForm.java" />
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/main/MainForm.form" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.31/a1a0b714cb760f9bd0f4f9d04915c1748eaefc64/kotlin-stdlib-1.2.31-sources.jar!/generated/_Arrays.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="410">
@@ -1638,10 +1616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
           <caret line="1865" column="16" selection-start-line="1865" selection-start-column="16" selection-end-line="1865" selection-end-column="16" />
-          <folding>
-            <element signature="e#78432#78433#0" expanded="true" />
-            <element signature="e#78477#78478#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1649,10 +1623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
-          <folding>
-            <element signature="e#1226#1227#0" expanded="true" />
-            <element signature="e#1264#1265#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1719,38 +1689,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/sync/qlearning/discrete/QLearningDiscreteConv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT.jar!/org/deeplearning4j/rl4j/network/dqn/DQNFactoryStdConv.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="29" column="667" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="667" />
-          <folding>
-            <element signature="e#3301#3302#0" expanded="true" />
-            <element signature="e#3333#3334#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/main/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="68" column="124" selection-start-line="68" selection-start-column="124" selection-end-line="68" selection-end-column="124" />
-          <folding>
-            <element signature="e#14#231#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1761,41 +1703,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/sync/qlearning/discrete/QLearningDiscreteConv.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.deeplearning4j/deeplearning4j-nn/1.0.0-alpha/4429816d777912efb537e354c0f5be7fcc5e6092/deeplearning4j-nn-1.0.0-alpha-sources.jar!/org/deeplearning4j/nn/layers/convolution/ConvolutionLayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/main/Main.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="68" column="124" selection-start-line="68" selection-start-column="124" selection-end-line="68" selection-end-column="124" />
+          <folding>
+            <element signature="e#14#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/jdk1.8.0_25/src.zip!/java/awt/Image.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="198" column="28" selection-start-line="198" selection-start-column="28" selection-end-line="198" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
+          <folding>
+            <element signature="e#25#286#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="61" />
+          <folding>
+            <element signature="e#33#200#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+          <folding>
+            <element signature="e#33#170#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1293">
-          <caret line="356" column="43" selection-start-line="356" selection-start-column="22" selection-end-line="356" selection-end-column="43" />
+        <state relative-caret-position="615">
+          <caret line="130" column="28" lean-forward="true" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
           <folding>
-            <element signature="e#1455#1551#0" />
-            <element signature="e#1490#1545#0" />
             <element signature="n#!!doc;n#actions#0;n#!!block;n#Game#0" />
-            <element signature="e#2054#2836#0" />
             <element signature="n#!!block;n#closeGame#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#resetGame#0;n#!!block;n#Game#0" />
-            <element signature="e#3358#3470#0" />
-            <element signature="e#3397#3460#0" />
-            <element signature="n#!!block;n#nextStep#0;n#!!block;n#Game#0" />
-            <element signature="e#3735#3965#0" />
-            <element signature="n#!!block;n#createAndAddObstacle#0;n#!!block;n#nextStep#0;n#!!block;n#Game#0" />
-            <element signature="e#4110#4416#1" />
-            <element signature="e#4257#4402#0" />
-            <element signature="e#4304#4383#0" />
-            <element signature="e#4422#4721#1" />
-            <element signature="e#4435#4579#0" />
-            <element signature="e#4610#4689#0" />
-            <element signature="e#4941#5075#1" />
-            <element signature="e#5100#6035#1" />
-            <element signature="e#5263#5574#1" />
-            <element signature="e#5328#5425#1" />
-            <element signature="e#5553#5599#1" />
-            <element signature="e#5596#5650#1" />
-            <element signature="e#5675#5720#1" />
-            <element signature="e#5766#5819#1" />
-            <element signature="e#5878#5963#1" />
-            <element signature="e#6056#6068#1" />
-            <element signature="e#6117#6148#1" />
-            <element signature="e#6154#6314#1" />
-            <element signature="e#6347#6378#1" />
             <element signature="n#!!block;n#getActionSpace#0;n#!!block;n#Game#0" />
             <element signature="n#!!block;n#getObservationSpace#0;n#!!block;n#Game#0" />
             <element signature="n#!!block;n#isDone#0;n#!!block;n#Game#0" />
@@ -1803,8 +1778,14 @@
             <element signature="n#!!block;n#reset#0;n#!!block;n#Game#0" />
             <element signature="n#!!block;n#close#0;n#!!block;n#Game#0" />
             <element signature="n#!!block;n#step#0;n#!!block;n#Game#0" />
-            <element signature="n#!!doc;n#FLAPPY_HPROC#0;n#!!block;n#Companion#0;n#!!block;n#Game#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="37" column="42" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="42" />
         </state>
       </provider>
     </entry>

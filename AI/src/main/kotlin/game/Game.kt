@@ -114,7 +114,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         player.reset()
         obstacleId = 2
         isObstacleDown = true
-        val firstObstacle = object : Obstacle(SCREEN_WIDTH + OBSTACLE_WIDTH / 2, OBSTACLE_HEIGHT / 2, -OBSTACLE_WIDTH - 100) {
+        val firstObstacle = object : Obstacle(SCREEN_WIDTH + OBSTACLE_WIDTH / 2, OBSTACLE_HEIGHT / 2, true, -OBSTACLE_WIDTH - 100) {
             override fun onDestroy() {
                 objectsPendingRemoval.add(this)
             }
@@ -127,10 +127,10 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     }
 
     fun nextStep(doJump: Boolean): Double {
-        var reward = 0.1
+        var reward = 1.0
         ticksSinceLastJump++
 
-        val jump = doJump /* && ticksSinceLastJump > 6
+        /*val jump = doJump  && ticksSinceLastJump > 6
         if (jump) {
             ticksSinceLastJump = 0
             println("bot was allowed to jump")
@@ -142,14 +142,14 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         fun createAndAddObstacle() {
             ticksSinceLastSpawn = 0
             val x = if (isObstacleDown) {
-                object : Obstacle(screenWidth + OBSTACLE_WIDTH / 2, screenHeight - OBSTACLE_HEIGHT / 2, -Obstacle.OBSTACLE_WIDTH - 100) {
+                object : Obstacle(screenWidth + OBSTACLE_WIDTH / 2, screenHeight - OBSTACLE_HEIGHT / 2, !isObstacleDown, -Obstacle.OBSTACLE_WIDTH - 100) {
                     override fun onDestroy() {
                         objectsPendingRemoval.add(this)
                     }
 
                 }
             } else {
-                object : Obstacle(screenWidth + OBSTACLE_WIDTH / 2, Obstacle.OBSTACLE_HEIGHT / 2, -Obstacle.OBSTACLE_WIDTH - 100) {
+                object : Obstacle(screenWidth + OBSTACLE_WIDTH / 2, Obstacle.OBSTACLE_HEIGHT / 2, !isObstacleDown, -Obstacle.OBSTACLE_WIDTH - 100) {
                     override fun onDestroy() {
                         objectsPendingRemoval.add(this)
                     }
@@ -180,7 +180,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
                 }
                 pipePos = obstacle.x + obstacle.width / 2.0
                 if (pipePos <= playerPosX && playerPosX < pipePos + 4) {
-                    reward = 1.0
+                    reward = 10.0
                 }
 
             }
@@ -193,7 +193,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
             }
 
 
-            if (jump) {
+            if (doJump) {
                 player.jump()
             }
 
@@ -225,7 +225,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         }
 
         if (gameOver) {
-            reward = -1.0
+            reward = -10.0
         }
 
         return reward
@@ -285,7 +285,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
                 1.0, //td-error clipping
                 0.1f, //min epsilon
                 2000000, //num step for eps greedy anneal
-                false //double DQN
+                true //double DQN
         )
 
         var FLAPPY_NET = DQNFactoryStdConv.Configuration(
@@ -340,7 +340,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
             } else {
                 mdp = Game()
                 val saveFrame = JFrame()
-                saveFrame.setSize(200,200)
+                saveFrame.setSize(200, 200)
                 saveFrame.isResizable = false
                 val saveButton = JButton("Save neural network")
                 saveButton.setSize(200, 200)

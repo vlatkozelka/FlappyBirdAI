@@ -51,7 +51,7 @@ class GamePanel(private val gameObjects: MutableList<GameObject>) : JPanel(), En
                 gameObject.onDraw(it)
             }
             sg?.let {
-                gameObject.onDraw(it)
+                gameObject.onDrawBasic(it)
             }
         }
 

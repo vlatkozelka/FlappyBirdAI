@@ -4,17 +4,25 @@ import game.gameobject.GameObject
 import game.utils.Constants
 import java.awt.Color
 import java.awt.Graphics
+import java.io.File
+import javax.imageio.ImageIO
 
 abstract class Player : GameObject() {
 
 
     init {
         reset()
+        texture = ImageIO.read(File("textures/bird.png"))
+        texture = resizeToTexture(texture)
     }
 
     override fun onDraw(graphics: Graphics) {
+        graphics.drawImage(texture,x-width/2,y-height/2,null)
+    }
+
+    override fun onDrawBasic(graphics: Graphics) {
         graphics.color = color
-        graphics.fillOval(x - width / 2, y - height / 2, width, height)
+        graphics.fillRect(x - width / 2, y - height / 2, width, height)
     }
 
     fun jump() {
@@ -30,8 +38,8 @@ abstract class Player : GameObject() {
         y = 250
         speedX = 0
         speedY = 0
-        width = 25
-        height = 25
+        width = 35
+        height = 35
         weight = 10
         force[1] = Constants.GRAVITY * weight
         color = Color.RED
