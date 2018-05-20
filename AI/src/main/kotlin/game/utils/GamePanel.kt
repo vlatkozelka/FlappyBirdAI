@@ -35,13 +35,15 @@ class GamePanel(private val gameObjects: MutableList<GameObject>) : JPanel(), En
     }
 
     var gameOver = false
-    lateinit var screenshot: BufferedImage
+    var screenshot: BufferedImage = BufferedImage(Game.SCREEN_WIDTH, Game.SCREEN_HEIGHT, BufferedImage.TYPE_INT_ARGB)
         private set
 
     override fun paintComponent(g: Graphics?) {
         super.paintComponent(g)
         screenshot = BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB)
         val sg = screenshot.graphics
+        sg.color = Color.WHITE
+        sg.fillRect(0,0,width,height)
         val tmpColor = g?.color ?: Color.lightGray
 
         for (gameObject in gameObjects) {

@@ -19,6 +19,7 @@ import org.deeplearning4j.rl4j.space.DiscreteSpace
 import org.deeplearning4j.rl4j.space.ObservationSpace
 import org.deeplearning4j.rl4j.util.DataManager
 import org.nd4j.linalg.learning.config.Adam
+import java.awt.Color
 import java.awt.Dimension
 import java.awt.event.WindowEvent
 import java.awt.event.WindowEvent.WINDOW_CLOSING
@@ -77,6 +78,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         frame.defaultCloseOperation = EXIT_ON_CLOSE
 
         panel = GamePanel(gameObjects)
+        panel.background = Color.BLACK
         panel.isFocusable = true
 
 
@@ -170,17 +172,20 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
 
         if (!gameOver) {
             //check for collisions
-            val obstacles = gameObjects.filterIndexed({ index, gameObject -> index > 0 })
-            var playerPosX = player.x + player.width / 2
+            val obstacles = gameObjects.filterIndexed({ index, _ -> index > 0 })
+            val playerPosX = player.x + player.width / 2.0
             var pipePos: Double
             for (obstacle in obstacles) {
                 if (player.doesCollideWithOther(obstacle)) {
                     gameOver = true
                     panel.gameOver = true
                 }
-                pipePos = obstacle.x + obstacle.width / 2.0
-                if (pipePos <= playerPosX && playerPosX < pipePos + 4) {
-                    reward = 10.0
+                if (!gameOver) {
+                    pipePos = obstacle.x + obstacle.width / 2.0
+                    if (pipePos <= playerPosX && playerPosX <= pipePos + 15) {
+                        println("Bot just got a reward of 1000 for passing an obstacle!")
+                        reward = 1000.0
+                    }
                 }
 
             }
@@ -196,6 +201,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
             if (doJump) {
                 player.jump()
             }
+
 
             for (gameObject in gameObjects) {
                 gameObject.onUpdate()
@@ -225,7 +231,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
         }
 
         if (gameOver) {
-            reward = -10.0
+            reward = -1000.0
         }
 
         return reward
@@ -262,7 +268,8 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
     override fun step(action: Int?): StepReply<GamePanel> {
         //println("calling step with action $action")
         //println("Game over value is $gameOver")
-        val reward = nextStep(action == 1)
+        //val reward = nextStep(action == 1)
+        val reward = nextStep(actions[action ?: 0] == 1)
         //println("rewarded $reward")
         return StepReply(panel, reward, gameOver, null)
     }
@@ -284,21 +291,18 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
                 0.99, //gamma
                 1.0, //td-error clipping
                 0.1f, //min epsilon
-                2000000, //num step for eps greedy anneal
+                10000, //num step for eps greedy anneal
                 true //double DQN
         )
 
         var FLAPPY_NET = DQNFactoryStdConv.Configuration(
                 0.005, //learning rate
-                0.0,
+                0.0,//l2 regularization
                 Adam(0.005) // updater
                 , null// Listeners
-        )//l2 regularization
+        )
 
-        /*
-     * The pixel input is 320x240, but using the history processor we scale that to 160x120
-     * and then crop out a 160x80 segment to remove pixels that aren't needed
-     */
+
         var FLAPPY_HPROC = IHistoryProcessor.Configuration(
                 1, // Number of frames
                 100, // Scaled width
@@ -330,7 +334,7 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
                     mdp = Game()
                     dql = QLearningDiscreteConv<GamePanel>(mdp, dqn, FLAPPY_HPROC, Flappy_QL, dataManager)
                     dql.train()
-                    dql.policy.save("dqlpolicy")
+                    //dql.policy.save("dqlpolicy")
                     mdp.close()
                 } else {
                     mdp = Game()
@@ -349,18 +353,18 @@ class Game : MDP<GamePanel, Int, DiscreteSpace> {
                     val fileChooser = JFileChooser()
                     fileChooser.showOpenDialog(saveFrame)
                     val f = fileChooser.selectedFile
-                    dql?.neuralNet?.save(f.outputStream())
+                    val out = f.outputStream()
+                    dql?.neuralNet?.save(out)
+                    out.close()
                 })
 
                 saveFrame.isVisible = true
                 saveFrame.setLocationRelativeTo(null)
                 dql = QLearningDiscreteConv<GamePanel>(mdp, FLAPPY_NET, FLAPPY_HPROC, Flappy_QL, dataManager)
                 dql.train()
-                dql.policy.save("dqlpolicy")
+                // dql.policy.save("dqlpolicy")
                 mdp.close()
             }
-
-
         }
 
     }

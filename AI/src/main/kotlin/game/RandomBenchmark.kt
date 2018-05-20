@@ -13,7 +13,7 @@ class RandomBenchmark {
             Thread {
 
                 while (true) {
-                    game.nextStep(ran.nextBoolean())
+                   // game.nextStep(ran.nextBoolean())
 
                     Thread.sleep(1000 / 20)
                     if(game.gameOver){

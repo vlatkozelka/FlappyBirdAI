@@ -2,12 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1448d912-0aa5-4cba-9490-3ce313562694" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/modules/AI/AI.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AI/AI.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/AI/AI_main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AI/AI_main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$Companion$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game$Companion$main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1$x$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1$x$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1$x$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1$x$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game$nextStep$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$player$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game$player$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game$resetGame$firstObstacle$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game$resetGame$firstObstacle$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/RandomBenchmark$Companion$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/RandomBenchmark$Companion$main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/RandomBenchmark$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/RandomBenchmark$Companion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/gameobject/prefabs/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/gameobject/prefabs/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/out/production/classes/game/utils/GamePanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/AI/out/production/classes/game/utils/GamePanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt" afterDir="false" />
     </list>
@@ -66,22 +77,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Game.kt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Game.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="130" column="28" lean-forward="true" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
+            <state relative-caret-position="143">
+              <caret line="286" column="20" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="20" />
               <folding>
-                <element signature="n#!!doc;n#actions#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#closeGame#0;n#!!block;n#Game#0" />
-                <element signature="n#!!block;n#getActionSpace#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#getObservationSpace#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#isDone#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#newInstance#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#reset#0;n#!!block;n#Game#0" />
                 <element signature="n#!!block;n#close#0;n#!!block;n#Game#0" />
-                <element signature="n#!!block;n#step#0;n#!!block;n#Game#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RandomBenchmark.kt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AI/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="722">
+              <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -89,7 +115,7 @@
       <file leaf-file-name="GameObject.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
+            <state relative-caret-position="1843">
               <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
               <folding>
                 <element signature="e#25#286#0" expanded="true" />
@@ -101,17 +127,17 @@
       <file leaf-file-name="Image.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/jdk1.8.0_25/src.zip!/java/awt/Image.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
+            <state relative-caret-position="3192">
               <caret line="198" column="28" selection-start-line="198" selection-start-column="28" selection-end-line="198" selection-end-column="28" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GamePanel.kt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GamePanel.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="37" column="42" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="42" />
+            <state relative-caret-position="741">
+              <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -119,11 +145,8 @@
       <file leaf-file-name="Player.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
-              <folding>
-                <element signature="e#33#170#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="437">
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -131,20 +154,8 @@
       <file leaf-file-name="Obstacle.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
+            <state relative-caret-position="456">
               <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="61" />
-              <folding>
-                <element signature="e#33#200#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QLearningDiscreteConv.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/sync/qlearning/discrete/QLearningDiscreteConv.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -166,15 +177,6 @@
               <folding>
                 <element signature="e#14#231#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RandomBenchmark.kt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -202,7 +204,6 @@
       <find>jfram</find>
       <find>shape</find>
       <find>nextS</find>
-      <find>println</find>
       <find>reward</find>
       <find>closeGa</find>
       <find>reset</find>
@@ -210,6 +211,8 @@
       <find>resetGame</find>
       <find>Highest score</find>
       <find>seed</find>
+      <find>actions</find>
+      <find>println</find>
     </findStrings>
     <replaceStrings>
       <replace>println</replace>
@@ -1018,20 +1021,19 @@
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/Main.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/main/MainForm.form" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/main/Main.kt" />
-        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt" />
-        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt" />
+        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt" />
+        <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt" />
         <option value="$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="1273" />
+    <option name="width" value="1294" />
+    <option name="height" value="1407" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -1041,7 +1043,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1053,6 +1054,12 @@
               <item name="FlappyBirdsAI" type="b2602c69:ProjectViewProjectNode" />
               <item name="FlappyBirdsAI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="AI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="FlappyBirdsAI" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FlappyBirdsAI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="AI" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FlappyBirdsAI" type="b2602c69:ProjectViewProjectNode" />
@@ -1129,6 +1136,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -1152,11 +1160,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vlatkozelka\IdeaProjects\MNIST\AI\src\main\kotlin" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
       <recent name="main" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\vlatkozelka\IdeaProjects\MNIST\AI\src\main\kotlin" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vlatkozelka\IdeaProjects\FlappyBirdsAI\AI\libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1298,12 +1309,12 @@
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35219124" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.25577688" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32988048" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24085851" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28974563" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.1999205" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1322,28 +1333,28 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3298887" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Gradle" order="5" visible="true" weight="0.1999205" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3697211" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23251192" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32988048" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3697211" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32988048" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
-      <window_info anchor="right" id="Coverage" order="9" side_tool="true" weight="0.3298887" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32988048" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.060557768" />
       <window_info id="Capture Tool" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -1581,13 +1592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/Main.java" />
     <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/IHistoryProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1696,13 +1700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/AI/libs/rl4j-core-1.0.0-SNAPSHOT-sources.jar!/org/deeplearning4j/rl4j/learning/sync/qlearning/discrete/QLearningDiscreteConv.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
@@ -1729,14 +1726,14 @@
     </entry>
     <entry file="jar://C:/Program Files/jdk1.8.0_25/src.zip!/java/awt/Image.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
+        <state relative-caret-position="3192">
           <caret line="198" column="28" selection-start-line="198" selection-start-column="28" selection-end-line="198" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/GameObject.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
+        <state relative-caret-position="1843">
           <caret line="104" column="21" selection-start-line="104" selection-start-column="21" selection-end-line="104" selection-end-column="21" />
           <folding>
             <element signature="e#25#286#0" expanded="true" />
@@ -1746,46 +1743,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Obstacle.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
+        <state relative-caret-position="456">
           <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="61" />
-          <folding>
-            <element signature="e#33#200#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt">
+    <entry file="file://$PROJECT_DIR$/AI/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="61" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
-          <folding>
-            <element signature="e#33#170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="130" column="28" lean-forward="true" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
-          <folding>
-            <element signature="n#!!doc;n#actions#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#closeGame#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#getActionSpace#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#getObservationSpace#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#isDone#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#newInstance#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#reset#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#close#0;n#!!block;n#Game#0" />
-            <element signature="n#!!block;n#step#0;n#!!block;n#Game#0" />
-          </folding>
+        <state relative-caret-position="722">
+          <caret line="38" column="52" selection-start-line="38" selection-start-column="52" selection-end-line="38" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/utils/GamePanel.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="37" column="42" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="42" />
+        <state relative-caret-position="741">
+          <caret line="45" column="36" selection-start-line="45" selection-start-column="36" selection-end-line="45" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/RandomBenchmark.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/gameobject/prefabs/Player.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AI/src/main/kotlin/game/Game.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="286" column="20" selection-start-line="286" selection-start-column="20" selection-end-line="286" selection-end-column="20" />
+          <folding>
+            <element signature="n#!!block;n#closeGame#0;n#!!block;n#Game#0" />
+            <element signature="n#!!block;n#getObservationSpace#0;n#!!block;n#Game#0" />
+            <element signature="n#!!block;n#isDone#0;n#!!block;n#Game#0" />
+            <element signature="n#!!block;n#newInstance#0;n#!!block;n#Game#0" />
+            <element signature="n#!!block;n#reset#0;n#!!block;n#Game#0" />
+            <element signature="n#!!block;n#close#0;n#!!block;n#Game#0" />
+          </folding>
         </state>
       </provider>
     </entry>

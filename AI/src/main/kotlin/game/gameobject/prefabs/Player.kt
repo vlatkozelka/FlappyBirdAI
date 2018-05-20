@@ -17,7 +17,7 @@ abstract class Player : GameObject() {
     }
 
     override fun onDraw(graphics: Graphics) {
-        graphics.drawImage(texture,x-width/2,y-height/2,null)
+        graphics.drawImage(texture, x - width / 2, y - height / 2, null)
     }
 
     override fun onDrawBasic(graphics: Graphics) {
@@ -31,6 +31,14 @@ abstract class Player : GameObject() {
 
     fun stopJump() {
         force[1] = Constants.GRAVITY * weight
+    }
+
+    fun move(action: Int) {
+        speedY = action*10
+    }
+
+    fun stopMove() {
+        speedY = 0
     }
 
     fun reset() {
